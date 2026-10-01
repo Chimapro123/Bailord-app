@@ -1,0 +1,4 @@
+import { Mail, MapPin, Phone } from "lucide-react";
+export default function Contact() {
+  return <main className="section"><div className="container contact-grid"><div><span className="eyebrow">CONTACT BAILORD</span><h1>Let's talk.</h1><p>Use the verified details below after replacing the placeholders.</p><div className="contact-list"><p><Phone/> REPLACE WITH VERIFIED PHONE / WHATSAPP</p><p><Mail/> REPLACE WITH VERIFIED EMAIL</p><p><MapPin/> REPLACE WITH VERIFIED BUSINESS ADDRESS</p></div></div><form className="form-card" onSubmit={e=>{e.preventDefault();alert("Demo message submitted.")}}><h2>Send a message</h2><label>Name<input required/></label><label>Email<input type="email" required/></label><label>Subject<input required/></label><label>Message<textarea rows="6" required/></label><button className="btn btn-primary">Send enquiry</button></form></div></main>;
+}

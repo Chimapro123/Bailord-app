@@ -1,0 +1,6 @@
+import { useState } from "react";
+export default function EnergyQuote() {
+  const [done,setDone] = useState(false);
+  if (done) return <main className="section empty-state"><h1>Quote request submitted</h1><p>Connect this form to your verified CRM/email/backend before launch.</p></main>;
+  return <main className="section"><div className="container narrow"><div className="form-card"><span className="eyebrow">BAILORD ENERGY</span><h1>Request a solar quote</h1><p>Tell us about the project. Final system sizing and pricing require verified assessment.</p><form onSubmit={e=>{e.preventDefault();setDone(true)}}><div className="form-grid"><label>Name<input required/></label><label>Phone<input required/></label><label>Email<input type="email" required/></label><label>Project type<select required><option value="">Select</option><option>Residential</option><option>Small business</option><option>Commercial</option><option>Industrial</option></select></label><label>Estimated monthly electricity spend<input placeholder="Optional"/></label><label>Location<input required/></label><label className="full-field">Project details<textarea rows="5" placeholder="Tell us about your energy needs..." required/></label></div><button className="btn btn-primary">Submit quote request</button></form></div></div></main>;
+}

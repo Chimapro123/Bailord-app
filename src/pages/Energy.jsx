@@ -1,0 +1,12 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, CheckCircle2, Factory, Home as HomeIcon, Sun } from "lucide-react";
+import { energyPackages, energyShowcases } from "../data/energy";
+import SectionTitle from "../components/SectionTitle";
+
+export default function Energy() {
+  return <main><section className="hero energy-hero"><div className="container hero-grid"><div><span className="eyebrow">NEWLY LAUNCHED • BACKED BY BAILORD</span><h1>Bailord Energy</h1><p>Solar energy solutions for residential homes, small businesses, large businesses and industrial clients.</p><Link className="btn btn-white" to="/energy/quote">Request a solar quote <ArrowRight/></Link></div><Sun className="hero-icon"/></div></section>
+    <section className="section"><div className="container"><SectionTitle eyebrow="SOLAR SOLUTIONS" title="Built around your energy requirement" /><div className="two-cards">{energyPackages.map(p => <article className="energy-package" key={p.id}><img src={p.image} alt={p.title}/><div><span>{p.audience}</span><h3>{p.title}</h3><p>{p.description}</p><ul>{p.features.map(f => <li key={f}><CheckCircle2/> {f}</li>)}</ul><Link to="/energy/quote" className="text-link">Discuss this solution <ArrowRight/></Link></div></article>)}</div></div></section>
+    <section className="section soft"><div className="container"><SectionTitle eyebrow="HOW IT WORKS" title="From assessment to energy" /><div className="process-grid">{[["01", "Tell us your need", HomeIcon],["02", "Assess the site & load", Factory],["03", "Design the system", Sun],["04", "Discuss implementation", CheckCircle2]].map(([n,t,I]) => <div className="process" key={n}><span>{n}</span><I/><h3>{t}</h3><p>Replace with Bailord's verified process details.</p></div>)}</div></div></section>
+    <section className="section"><div className="container"><SectionTitle eyebrow="PROJECT SHOWCASE" title="Solar concepts & case studies" text="These are visual placeholders. Replace them with real Bailord Energy project photos and verified results."/><div className="listing-grid">{energyShowcases.map(x => <div className="listing-card" key={x.title}><img src={x.image} alt={x.title}/><div><span>Concept / placeholder</span><h3>{x.title}</h3></div></div>)}</div></div></section>
+  </main>;
+}

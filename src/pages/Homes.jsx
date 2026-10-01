@@ -1,0 +1,12 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, Building2, House, MapPinned } from "lucide-react";
+import { previewListings } from "../data/homes";
+import SectionTitle from "../components/SectionTitle";
+
+export default function Homes() {
+  return <main><section className="hero homes-hero"><div className="container hero-grid"><div><span className="eyebrow">COMING SOON • PARTNERSHIP IN PROGRESS</span><h1>Bailord Homes And More</h1><p>A new real-estate business being developed through a partnership under the Bailord name.</p><a href="#interest" className="btn btn-white">Join the waiting list</a></div><Building2 className="hero-icon"/></div></section>
+    <section className="section"><div className="container"><SectionTitle eyebrow="COMING SOON" title="A preview of what's ahead" text="Preview listings are placeholders until verified property inventory is available."/><div className="listing-grid">{previewListings.map(item=><article className="listing-card" key={item.title}><img src={item.image} alt={item.title}/><div><span>{item.status}</span><h3>{item.title}</h3><p><MapPinned size={15}/> {item.location}</p></div></article>)}</div></div></section>
+    <section className="section soft"><div className="container"><div className="three-feature-grid"><div><House/><h3>Homes & apartments</h3><p>Future property listings will be published here.</p></div><div><MapPinned/><h3>Land</h3><p>Future land opportunities will be published here.</p></div><div><Building2/><h3>Commercial spaces</h3><p>Future commercial property listings will be published here.</p></div></div></div></section>
+    <section className="section" id="interest"><div className="container narrow"><div className="form-card"><SectionTitle eyebrow="GET NOTIFIED" title="Register your interest" text="Join the waiting list for the official launch and property announcements."/><form onSubmit={e=>{e.preventDefault();e.currentTarget.reset();alert("Demo signup submitted.")}}><label>Full name<input required/></label><label>Email<input type="email" required/></label><label>Phone<input required/></label><label>Interested in<select><option>Homes</option><option>Land</option><option>Apartments</option><option>Commercial spaces</option><option>All</option></select></label><button className="btn btn-primary">Join waiting list <ArrowRight/></button></form></div></div></section>
+  </main>;
+}

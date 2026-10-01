@@ -1,0 +1,7 @@
+import { Link } from "react-router-dom";
+import { ArrowRight, Target, Users, Zap } from "lucide-react";
+import SectionTitle from "../components/SectionTitle";
+
+export default function About() {
+  return <main className="section"><div className="container"><section className="about-hero"><span className="eyebrow">ABOUT BAILORD</span><h1>A growing business built around opportunity.</h1><p>Bailord's core business is phones and gadgets. The company is expanding through Bailord Energy and a new Bailord Homes And More partnership.</p></section><div className="three-feature-grid"><div><Target/><h3>Our purpose</h3><p>Replace this with Bailord's verified mission statement.</p></div><div><Users/><h3>Our customers</h3><p>Serve people and businesses with clear information and dependable support.</p></div><div><Zap/><h3>What's next</h3><p>Energy is newly launched and Homes And More is coming soon.</p></div></div><section className="story"><SectionTitle eyebrow="OUR STORY" title="From gadgets to a broader Bailord ecosystem"/><p>Use this section to tell Bailord's real history, founding story, milestones and team story. No invented claims are included in this template.</p><Link className="btn btn-primary" to="/contact">Talk to Bailord <ArrowRight/></Link></section></div></main>;
+}
