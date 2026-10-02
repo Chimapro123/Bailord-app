@@ -9,10 +9,10 @@ export default function Chatbot() {
   const [input, setInput] = useState("");
   const submit = e => { e.preventDefault(); sendMessage(input); setInput(""); };
 
-  if (!open) return <button className="chat-launcher" onClick={() => setOpen(true)}><MessageCircle /> Ask Bailord</button>;
+  if (!open) return <button className="chat-launcher" onClick={() => setOpen(true)}><MessageCircle /> Ask BailBot🤖</button>;
 
   return <div className="chatbot">
-    <div className="chat-header"><div><strong>Ask Bailord</strong><small>Verified knowledge base</small></div><button onClick={() => setOpen(false)}><X /></button></div>
+    <div className="chat-header"><div><strong>Ask BailBot🤖</strong><small>Verified knowledge base</small></div><button onClick={() => setOpen(false)}><X /></button></div>
     <div className="chat-messages">
       {messages.map((m, i) => <div key={i} className={`chat-message ${m.role}`}>{m.text}{m.text.includes("WhatsApp") && <a href={`https://wa.me/${ +2348037885880}`} target="_blank" rel="noreferrer"> Contact Bailord on WhatsApp →</a>}</div>)}
     </div>

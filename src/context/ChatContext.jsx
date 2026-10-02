@@ -14,7 +14,7 @@ function getAnswer(message) {
 
 export function ChatProvider({ children }) {
   const [messages, setMessages] = useState([
-    { role: "bot", text: "Hi! I'm Ask Bailord. I can answer questions using Bailord's verified knowledge base." }
+    { role: "bot", text: "Hi! I'm BailBot🤖. I can answer questions using Bailord's verified knowledge base." }
   ]);
   const [open, setOpen] = useState(false);
 
